@@ -1,0 +1,32 @@
+---
+title: "Setup a development environment"
+description: "Guide to setup dev environment for bl702 MCU development"
+date: 2022-02-22T00:27:00
+draft: false
+category: ["bl702"]
+tags: ["bl702", "sdk", "environment"]
+---
+
+In this guide we will be setting a development environment for the bl602 development. Neovim is used here but you may choose to your liking. The important requirement is to setup code completion in your editor that'll give ide like features. I find that this is actually useful in the initial phases to aid learning the new framework.
+
+To do this, we are going to setup lsp on neovim. Lsp is native to neovim and only requires some config settings! But you dont have to do this yourself, there's a [github repository](https://github.com/nvim-lua/kickstart.nvim) with preset config file you can just copy. It also helps to configure sane defaults to other settings.
+
+First install neovim. Then you need a language server, kickstarter uses clangd. Install this via your package manager. In ubuntu:
+```
+sudo apt install clangd
+```
+Finally copy the kickstarter config. That's it for installation. You may scout around kickstarter to personalise your neovim setup further.
+
+You also need to install a small app called bear. Then in your project directory run:
+```
+make clean
+bear -- make
+```
+
+This spits out a file called ```compile_commands.json``` in your project root. Now you will have super ide like features in Neovim that make programming much more pleasurable!
+
+> clangd would throw out an error: ```unknown argument: '-fstrict-volatile-bitfields'```; to avoid this you can do so by instructing clangd to remove that flag from the compile command. To do this create a file ```~/.config/clangd/config.yaml``` with the following contents:
+>```
+>CompileFlags:
+>  Remove: [-fstrict-volatile-bitfields]
+>```

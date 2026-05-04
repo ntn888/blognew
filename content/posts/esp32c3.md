@@ -1,0 +1,15 @@
+---
+title: "Switching to the ESP32-C3"
+date: 2022-03-18T00:27:00
+draft: false
+category: ["misc"]
+tags: ["fimware develompent", "embedded hobbiest", "microcontrollers"]
+---
+
+This blog will here-on switch to the esp32-c3 controller...
+
+It is noted that the esp32 chips are infamous for higher power consumption, especially with the radio on. But it's expected that this problem will disappear with the introduction of the upcomming ESP32-H2 MCU.
+
+The rationale for the switch is the incomplete and nonfunctional tooling on the Buffalo Lab boards, especially the inability to use JTAG debugging.
+
+The esp32-c3 is a similarly low cost solution with a mature SDK and built-in debugger.

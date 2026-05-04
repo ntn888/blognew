@@ -1,0 +1,24 @@
+I offer my capacity for firmware & embedded partnerships. 🛠️
+
+Focusing on software-first shops that hit a hardware wall. If you ship great code but lack an in-house team to handle microcontrollers, drivers, or IoT interfaces, I’m here to bridge that gap.
+
+Think of me as your remote embedded extension.
+
+Shoot me an email if you’re navigating an integration bottleneck or looking for a collaborator.
+
+---
+
+In this blog we will be concerned with the world of embedded development. I see it that the tooling and the dev environments have come a long way in the last 10 years, and it is an exciting world! This blog will be more concerned from a hobbyist / maker viewpoint, involving parts mostly sourced from the bargain site Aliexpress.
+
+More specifically we will be looking at IoT development. Specifically the low power wireless devices; namely BLE, Zigbee and the open standard 802.15.4. (Why they didn't give it a human friendly name I dont know?!).
+
+Most development walkthroughs will be done on Linux environment, specifically Debian. Linux oriented articles/guides will be scattered throughout. I'm also a Linux addict. And where possible we will take a open-source/open-standard approach. This tends to be relevant for longer, whereas proprietary tools change or disappear!
+
+The development environments we will tackle are based on open source project components integrated into the respective SDK by the vendor: such as FreeRTOS and lwIP. Only we would be using a barebones Makefile based approach.
+
+Even though this is a hobbyist blog, this one is a little different. We would not be using Arduino. Instead we would be using the above frameworks. This might be a controversial choice, but I feel that closer-to-metal frameworks are more exciting.. This blog is an aide to move out from Arduino to more resource friendly frameworks such as FreeRTOS or RIOT-OS.
+
+FreeRTOS is a real-time kernel that enables multitasking; makes the life of a firmware dev easier. Good resources about RTOS theory include:
+
+- Digi-key [Youtube series](https://www.youtube.com/watch?v=F321087yYy4)
+- μC/OS-II User’s Manual Chapter 2: “Real-Time Systems Concepts” pp47. Accessible [here](http://www.farnell.com/datasheets/1950186.pdf) is an excellent intro into the world of RTOS. It has slow paced, thorough treatment.

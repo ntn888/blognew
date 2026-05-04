@@ -12,6 +12,7 @@ INDEX_CONTENT="content/_index.md"
 AUTHOR_NAME="Ajit Ananthadevan"
 AUTHOR_SUBTITLE="Interested in Everything Embedded"
 AUTHOR_IMAGE="/img/avatar.jpg"
+BASE_URL="https://simplycreate.online"
 
 SOCIAL_LINKS="https://github.com/ntn888 mastodon:@ajit_456@hachyderm.io mailto:ajit.ananthadevan@gmail.com /donate"
 
@@ -249,7 +250,74 @@ TAGEOF
         echo "Generated: $tag_dir/index.html"
     done < /tmp/unique_tags.txt
 
-    rm -f /tmp/all_tags.txt /tmp/unique_tags.txt /tmp/posts_sorted.txt /tmp/posts_data.txt
+    rm -f /tmp/all_tags.txt /tmp/unique_tags.txt /tmp/posts_sorted.txt
+}
+
+generate_sitemap() {
+    sitemap_file="$OUTPUT_DIR/sitemap.xml"
+
+    echo '<?xml version="1.0" encoding="UTF-8"?>' > "$sitemap_file"
+    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "$sitemap_file"
+
+    echo "  <url>" >> "$sitemap_file"
+    echo "    <loc>${BASE_URL}/</loc>" >> "$sitemap_file"
+    echo "    <changefreq>weekly</changefreq>" >> "$sitemap_file"
+    echo "    <priority>1.0</priority>" >> "$sitemap_file"
+    echo "  </url>" >> "$sitemap_file"
+
+    echo "  <url>" >> "$sitemap_file"
+    echo "    <loc>${BASE_URL}/posts/</loc>" >> "$sitemap_file"
+    echo "    <changefreq>daily</changefreq>" >> "$sitemap_file"
+    echo "    <priority>0.8</priority>" >> "$sitemap_file"
+    echo "  </url>" >> "$sitemap_file"
+
+    echo "  <url>" >> "$sitemap_file"
+    echo "    <loc>${BASE_URL}/services/</loc>" >> "$sitemap_file"
+    echo "    <changefreq>monthly</changefreq>" >> "$sitemap_file"
+    echo "    <priority>0.7</priority>" >> "$sitemap_file"
+    echo "  </url>" >> "$sitemap_file"
+
+    echo "  <url>" >> "$sitemap_file"
+    echo "    <loc>${BASE_URL}/donate/</loc>" >> "$sitemap_file"
+    echo "    <changefreq>monthly</changefreq>" >> "$sitemap_file"
+    echo "    <priority>0.6</priority>" >> "$sitemap_file"
+    echo "  </url>" >> "$sitemap_file"
+
+    if [ -f /tmp/posts_data.txt ] && [ -s /tmp/posts_data.txt ]; then
+        sort -r /tmp/posts_data.txt > /tmp/posts_sorted.txt
+        while IFS='|' read -r post_date filename _ _ _; do
+            post_slug="${filename}"
+            post_path="$OUTPUT_DIR/posts/${post_slug}/index.html"
+            if [ -f "$post_path" ]; then
+                date_part=$(echo "$post_date" | cut -d'T' -f1)
+                echo "  <url>" >> "$sitemap_file"
+                echo "    <loc>${BASE_URL}/posts/${post_slug}/</loc>" >> "$sitemap_file"
+                if [ -n "$date_part" ]; then
+                    echo "    <lastmod>${date_part}</lastmod>" >> "$sitemap_file"
+                fi
+                echo "    <changefreq>monthly</changefreq>" >> "$sitemap_file"
+                echo "    <priority>0.9</priority>" >> "$sitemap_file"
+                echo "  </url>" >> "$sitemap_file"
+            fi
+        done < /tmp/posts_sorted.txt
+
+        if [ -d "$OUTPUT_DIR/posts/tags" ]; then
+            for tag_dir in "$OUTPUT_DIR/posts/tags"/*/; do
+                [ -d "$tag_dir" ] || continue
+                tag_name=$(basename "$tag_dir")
+                echo "  <url>" >> "$sitemap_file"
+                echo "    <loc>${BASE_URL}/posts/tags/${tag_name}/</loc>" >> "$sitemap_file"
+                echo "    <changefreq>weekly</changefreq>" >> "$sitemap_file"
+                echo "    <priority>0.6</priority>" >> "$sitemap_file"
+                echo "  </url>" >> "$sitemap_file"
+            done
+        fi
+    fi
+
+    echo '</urlset>' >> "$sitemap_file"
+    echo "Generated: $sitemap_file"
+
+    rm -f /tmp/posts_data.txt /tmp/posts_sorted.txt
 }
 
 process_markdown() {
@@ -472,4 +540,5 @@ cat >> "$INDEX_HTML" << INDEXEOF
 INDEXEOF
 
 echo "Generated: $OUTPUT_DIR/index.html"
+generate_sitemap
 echo "Done! Site built in $OUTPUT_DIR/"

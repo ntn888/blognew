@@ -30,6 +30,6 @@ I'm currently trialling out daily driving Fedora 39, the latest version as of Ja
 
 # Overall Reflection
 
-I've completely stopped using Windows as my OS back in 2010 and the experience has been a liberating one. One of my favourite aspects about Linux is its hardware compatibility. It sails through on older hardware. Which makes it possible to have setups like [these](/posts/dev_station).
+I've completely stopped using Windows as my OS back in 2010 and the experience has been a liberating one. One of my favourite aspects about Linux is its hardware compatibility. It sails through on older hardware. Which makes it possible to have setups like [these](/posts/dev-station).
 
 Although linux powers majority of the servers; it's heavily lacking in the desktop market-share. Owing to only about 2% usage! Enthusiasts speak about the *Year of the Linux desktop*. But as much as I wish it were, I don't see it happening anytime soon.

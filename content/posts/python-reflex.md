@@ -6,7 +6,7 @@ category: ["webdev"]
 tags: ["python", "fullstack", "iot"]
 ---
 
-Previously we saw using [no-code](/posts/ai_nocode_autoblogging) tools for web development. While it enabled us to create services, we were devoid of customisability. And yet you still needed to know JS anyway, atleast in our use case.
+Previously we saw using [no-code](/posts/ai-nocode-autoblogging) tools for web development. While it enabled us to create services, we were devoid of customisability. And yet you still needed to know JS anyway, atleast in our use case.
 
 Reflex is a framework that enables full stack web development using just Python, no need to learn another language.
 

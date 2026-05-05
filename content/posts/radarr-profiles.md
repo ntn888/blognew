@@ -7,7 +7,7 @@ category: ["selfhosting"]
 tags: ["NAS", "self-host", "seedbox"]
 ---
 
-This article is a continuation of [this post](/posts/diy_nas) on setting up a DIY NAS. Here we will setup Radarr/Sonarr custom formats, such that it prioritises the efficient x265 1080p encodes.
+This article is a continuation of [this post](/posts/diy-nas) on setting up a DIY NAS. Here we will setup Radarr/Sonarr custom formats, such that it prioritises the efficient x265 1080p encodes.
 
 First go to Settings->Custom Formats and setup two custom formats like so:
 

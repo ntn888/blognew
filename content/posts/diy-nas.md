@@ -304,7 +304,7 @@ See above in [Download source](#download-source) for more information on this.
 
 ### Configuring Radarr
 
-See the separate post [Configuring Radarr]({% post_url /bl/2022-02-23-basic-gpio %}) on how to do this. [Trash Guides](https://trash-guides.info/Radarr/) is very handy. [Here's](/posts/radarr_profiles) a post on setting up Radarr quality profiles, so that you pull those juicy, efficient, balanced x265 encodes.
+[Trash Guides](https://trash-guides.info/Radarr/) is very handy. [Here's](/posts/radarr-profiles) a post on setting up Radarr quality profiles, so that you pull those juicy, efficient, balanced x265 encodes.
 
 Repeat the same steps with Sonarr as well to configure it.
 

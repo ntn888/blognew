@@ -13,7 +13,7 @@ Although I believe they have a chat interface, I just use the api and my own cha
 
 ---
 
-Recently we have seen the rise of the small LLMs. As discussed in [this article](/posts/llama2) the [Zephyr-7b-beta](https://huggingface.co/TheBloke/zephyr-7B-beta-GGUF) model is making ground for it's impressive results. Here we shall see how to run the model locally on your system, all you need is a GPU with 8GB VRAM. My [workstation](/posts/x99_motherboards) sports an AMD RX 580 card that is ideally suited for this task! While this guide is targetted towards AMD cards note that you can run it on NVIDIA as well. On my system it runs at speed around 7-9 tokens/sec.
+Recently we have seen the rise of the small LLMs. As discussed in [this article](/posts/llama2) the [Zephyr-7b-beta](https://huggingface.co/TheBloke/zephyr-7B-beta-GGUF) model is making ground for it's impressive results. Here we shall see how to run the model locally on your system, all you need is a GPU with 8GB VRAM. My [workstation](/posts/x99-motherboards) sports an AMD RX 580 card that is ideally suited for this task! While this guide is targetted towards AMD cards note that you can run it on NVIDIA as well. On my system it runs at speed around 7-9 tokens/sec.
 
 We will use the 'Text generation web UI' [https://github.com/oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui) as our client. This is the software that helps us to host and use the LLM model.
 

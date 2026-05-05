@@ -12,7 +12,7 @@ In the vibrant realm of artificial intelligence and machine learning, the democr
 
 I recently decided to bring Llama GPT into my personal fold. There’s something incredibly satisfying about hosting such powerful technology locally. Llama GPT offers a range of model sizes to cater to different needs and capacities, and I opted for the 13B version, with a model size of roughly 7GB.
 
-The prerequisite for running Llama GPT on Linux is Docker, which aligns perfectly with the setup on my Intel Xeon E5 2670v3-powered workstation. As I’ve shared in a previous [blog post](/posts/x99_motherboards), my system sports 12 cores and 24 threads, a configuration that one would presume quite capable of handling a large language model.
+The prerequisite for running Llama GPT on Linux is Docker, which aligns perfectly with the setup on my Intel Xeon E5 2670v3-powered workstation. As I’ve shared in a previous [blog post](/posts/x99-motherboards), my system sports 12 cores and 24 threads, a configuration that one would presume quite capable of handling a large language model.
 
 ![Llama logo on PC](/img/llama-gpt-pc.resized.png)
 

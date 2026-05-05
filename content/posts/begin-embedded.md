@@ -33,5 +33,5 @@ To complement your microcontroller board and to do projects, you will need a set
 
 Finally you need a multimeter. Again Ali has you covered here. Note that the accuracy of the multimeter is denoted in *counts*. 4000 counts would probably be about right for hobbyist use; but the more the better.. See [here](https://instrumentationtools.com/multimeter-digits-counts/) for an explanation. See [here](/posts/multimeters) for a breakdown of various options.
 
-[This post](/posts/building_lab) works through building an economical home lab.
+[This post](/posts/building-lab) works through building an economical home lab.
 

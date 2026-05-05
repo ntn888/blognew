@@ -60,4 +60,4 @@ edge_connector: connector {
 };
 ```
 
-[^1]: For an updated post of a newly available alternative see [this post](/posts/nrf_clones).
+[^1]: For an updated post of a newly available alternative see [this post](/posts/nrf-clones).
